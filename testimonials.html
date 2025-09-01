@@ -206,15 +206,21 @@
                 <div class="czd2q czjaw c92f3 cmhb9 c1plj">
                     <div class="cdoe6 c8lmj ccem0 c09hn">
                         <div class="c5ymx calbx cmhb9">
-                            <h1 class="cps50 cyb9k c41dw" data-aos="fade-down">Smart teams trust Appy to build killer websites</h1>
-                            <p class="text-gray-600 c0atf czz36" data-aos="fade-down" data-aos-delay="150">Our customers are building some of the world's most original, useful and
-                            loved products.</p>
-                            <div class="c2bi2" data-aos="fade-down" data-aos-delay="300">
-                                <a class="text-white bg-teal-500 cvy08 cahr4 ctr9b" href="contact.html">Request code</a>
-                            </div>
+                        <h1 class="cps50 cyb9k c41dw" data-aos="fade-down">
+                            Students & Businesses trust NMT Solutions for Ready-to-Use Projects
+                        </h1>
+                        <p class="text-gray-600 c0atf czz36" data-aos="fade-down" data-aos-delay="150">
+                            At <strong>NMT Solutions</strong>, we provide high-quality, practical, and innovative 
+                            projects across multiple technologies. Whether you're a college intern looking 
+                            for final year projects or a business seeking tailored solutions — we've got you covered.
+                        </p>
+                        <div class="c2bi2" data-aos="fade-down" data-aos-delay="300">
+                            <a class="text-white bg-teal-500 cvy08 cahr4 ctr9b" href="contact.html">Request a Project</a>
+                        </div>
                         </div>
                     </div>
                 </div>
+
 
             </section>
 
@@ -396,24 +402,24 @@
                                         autorotateTiming: 7000,
                                         items: [
                                             {
-                                                quote: '“ When we first met Appy, we were skeptical. We tried lots of things before and none of them worked. But, when we tested the Shape Builder it just perfect for our needs. “',
-                                                name: 'Alexandre Park',
-                                                role: 'Design Manager at',
-                                                team: 'Twitter',
+                                                quote: '“ As a final year student, I struggled to find a reliable project idea. NMT Solutions provided me with a ready-to-use project in AI, which not only impressed my professors but also boosted my confidence. “',
+                                                name: 'Rahul Sharma',
+                                                role: 'Computer Science Student at',
+                                                team: 'IIT Delhi',
                                                 link: '#0'
                                             },
                                             {
-                                                quote: '“ Not only in my career but in education as well, I feel grateful that Simple pushed me to expand my horizons and strive to accomplish more.“',
-                                                name: 'Greg Sebastian',
-                                                role: 'Head of Design at',
-                                                team: 'Shopify',
+                                                quote: '“ Our startup needed a quick prototype in Web Development. NMT Solutions delivered exactly what we wanted, saving us weeks of work and helping us pitch to investors faster. “',
+                                                name: 'Anjali Verma',
+                                                role: 'Co-Founder at',
+                                                team: 'TechNova Startup',
                                                 link: '#0'
                                             },
                                             {
-                                                quote: '“ I feel grateful that Simple pushed me to expand my horizons and strive to accomplish more. When we first met Appy, we were skeptical for no reason.“',
-                                                name: 'Dominik Prasad',
-                                                role: 'Backend Lead at',
-                                                team: 'Google',
+                                                quote: '“ I purchased a Machine Learning project from NMT Solutions for my internship, and it was not only well-documented but also easy to customize. Highly recommend their services! “',
+                                                name: 'Karan Patel',
+                                                role: 'Intern at',
+                                                team: 'Infosys',
                                                 link: '#0'
                                             }
                                         ],
@@ -431,19 +437,21 @@
                                         },
                                         heightFix() {
                                             this.$nextTick(() => {
-                                                this.$refs.testimonials.style.height = this.$refs.testimonials.children[this.active + 1].offsetHeight + 'px'
+                                                this.$refs.testimonials.style.height =
+                                                    this.$refs.testimonials.children[this.active + 1].offsetHeight + 'px'
                                             })
                                         }
                                     }))
                                 })
                             </script>
 
+
                         </div>
                     </div>
                 </div>
             </section>
             
-            <!-- Testimonial circles -->
+           <!-- Testimonial circles -->
             <section>
                 <div class="calbx c92f3 cmhb9 c1plj">
                     <div class="cdoe6 ccem0">
@@ -470,11 +478,19 @@
                 
                             <!-- People pics -->
                             <template x-for="(item, index) in items" :key="index" hidden="">
-                                <img class="cuqop cpz4m cgk3d ctlyr" :style="item.style" :src="`images/user-${index+1}.jpg`" :width="item.size" :height="item.size" :alt="`User ${index+1}`" @mouseenter="active = index; commentOn = true" @mouseleave="commentOn = false">
+                                <img class="cuqop cpz4m cgk3d ctlyr" 
+                                    :style="item.style" 
+                                    :src="`images/user-${index+1}.jpg`" 
+                                    :width="item.size" 
+                                    :height="item.size" 
+                                    :alt="`User ${index+1}`" 
+                                    @mouseenter="active = index; commentOn = true" 
+                                    @mouseleave="commentOn = false">
                             </template>
 
                             <!-- Comment box -->
-                            <div class="cey85 ck61j cj3dx clq5w c5ymx ccb29 ch76r ceo83 cyc1q cgdju comu3 cgk3d c3t8k c6zr7 cs8sl cti3h cvzqd cg6td cuq3f" :class="{'cmyvu': commentOn}">
+                            <div class="cey85 ck61j cj3dx clq5w c5ymx ccb29 ch76r ceo83 cyc1q cgdju comu3 cgk3d c3t8k c6zr7 cs8sl cti3h cvzqd cg6td cuq3f" 
+                                :class="{'cmyvu': commentOn}">
                                 <div class="text-gray-600 c0atf ccipq" x-text="items[active].comment"></div>
                                 <div class="cwkwy chdz1 cu5hn ceng1" x-text="items[active].name"></div>
                             </div>
@@ -484,160 +500,81 @@
                     </div>
                 </div>
             </section>
-            <!-- Handle data and functionality: https://github.com/alpinejs/alpine -->
+
             <script>
                 document.addEventListener('alpine:init', () => {
                     Alpine.data('circles', () => ({
-                        commentOn: false,
                         active: 0,
-                        // each item is a testimonial avatar with a comment
+                        commentOn: false,
                         items: [
                             {
-                                // user-1.jpg
-                                size: '48', // image width / height
-                                style: 'max-width: 7.08%;top: 29%;left: 2%;', // image absolute  positioning
-                                comment: 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. 🙌', // comment to be displayed on hover,
-                                name: 'Elian Whitney',
+                                name: 'Rahul Sharma, Student',
+                                comment: 'NMT Solutions helped me complete my final-year AI project with ease. The code was clean and easy to understand.',
+                                size: 60,
+                                style: 'top:20%; left:30%;'
                             },
                             {
-                                // user-2.jpg
-                                size: '36',
-                                style: 'max-width:5.31%;top: 60%;left: 2%;',
-                                comment: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.',
-                                name: 'Justice Porter',
+                                name: 'Anjali Verma, Startup Founder',
+                                comment: 'We needed a quick prototype for our app. NMT Solutions delivered exactly what we required, on time!',
+                                size: 70,
+                                style: 'top:40%; left:60%;'
                             },
                             {
-                                // user-3.jpg
-                                size: '72',
-                                style: 'max-width: 10.62%;top: 43%;left: 13%;',
-                                comment: 'When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream.',
-                                name: 'Leonel Roy',
+                                name: 'Karan Patel, Intern',
+                                comment: 'The machine learning project I purchased was well-documented. It saved me weeks of effort in my internship.',
+                                size: 55,
+                                style: 'top:65%; left:45%;'
                             },
                             {
-                                // user-4.jpg
-                                size: '56',
-                                style: 'max-width: 8.26%;top: 75%;left: 14%;',
-                                comment: 'O my friend -- but it is too much for my strength -- I sink under the weight of the splendour.',
-                                name: 'Daniel Wolf',
+                                name: 'Professor Mehta',
+                                comment: 'NMT Solutions projects are a great learning resource for my students. They combine practical skills with industry relevance.',
+                                size: 65,
+                                style: 'top:35%; left:20%;'
                             },
                             {
-                                // user-5.jpg
-                                size: '64',
-                                style: 'max-width: 9.44%;top: 11%;left: 15%;',
-                                comment: 'I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.',
-                                name: 'Seamus Miranda',
+                                name: 'Global Tech Corp',
+                                comment: 'We collaborated with NMT Solutions for a custom automation project. The team was professional and efficient.',
+                                size: 75,
+                                style: 'top:55%; left:75%;'
                             },
                             {
-                                // user-6.jpg
-                                size: '80',
-                                style: 'max-width: 11.8%;top: 32%;left: 30%;',
-                                comment: 'I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.',
-                                name: 'Fiona Schultz',
+                                name: 'Sneha Gupta, Data Science Student',
+                                comment: 'The Python data visualization project was excellent. It helped me impress recruiters during my campus placement.',
+                                size: 60,
+                                style: 'top:70%; left:25%;'
                             },
                             {
-                                // user-7.jpg
-                                size: '50',
-                                style: 'max-width: 7.37%;top: 65%;left: 30%;',
-                                comment: 'I should be incapable of drawing a single stroke at the present moment.',
-                                name: 'Monica Evans',
+                                name: 'Arjun Nair, Freelancer',
+                                comment: 'I purchased a full-stack eCommerce solution and deployed it for my client within days. Amazing work by NMT Solutions!',
+                                size: 68,
+                                style: 'top:25%; left:75%;'
                             },
                             {
-                                // user-8.jpg
-                                size: '36',
-                                style: 'max-width:5.31%;top: 6%;left: 33%;',
-                                comment: 'I feel that I never was a greater artist than now.',
-                                name: 'Jakayla Dunlap',
+                                name: 'TechBridge Pvt Ltd',
+                                comment: 'NMT Solutions provided us with a ready IoT prototype which we used for our client demo. It saved us months of development time.',
+                                size: 72,
+                                style: 'top:50%; left:15%;'
                             },
                             {
-                                // user-9.jpg
-                                size: '44',
-                                style: 'max-width: 6.49%;top: 77%;left: 44%;',
-                                comment: 'When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees.',
-                                name: 'Mattie Sharp',
+                                name: 'Priya Desai, MBA Student',
+                                comment: 'The business analytics project gave me real hands-on experience with dashboards. It was perfect for my coursework.',
+                                size: 58,
+                                style: 'top:15%; left:50%;'
                             },
                             {
-                                // user-10.jpg
-                                size: '64',
-                                style: 'max-width: 9.44%;top: 48%;left: 46%;',
-                                comment: 'I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.',
-                                name: 'Jazmyn Gaines',
-                            },
-                            {
-                                // user-11.jpg
-                                size: '72',
-                                style: 'max-width: 10.62%;top: 16%;left: 46%;',
-                                comment: 'One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.',
-                                name: 'Patrick Christensen',
-                            },
-                            {
-                                // user-12.jpg
-                                size: '64',
-                                style: 'max-width: 9.44%;top: 65%;left: 58%;',
-                                comment: 'His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.',
-                                name: 'Mike Johnson',
-                            },
-                            {
-                                // user-13.jpg
-                                size: '80',
-                                style: 'max-width: 11.8%;top: 32%;left: 62%;',
-                                comment: 'His room, a proper human room although a little too small, lay peacefully between its four familiar walls.',
-                                name: 'Lyla Griffith',
-                            },
-                            {
-                                // user-14.jpg
-                                size: '48',
-                                style: 'max-width: 7.08%; top: 6%;left: 63%;',
-                                comment: 'Drops of rain could be heard hitting the pane, which made him feel quite sad.',
-                                name: 'Damien Mclaughlin',
-                            },
-                            {
-                                // user-15.jpg
-                                size: '24',
-                                style: 'max-width: 3.54%;top: 93%;left: 65%;',
-                                comment: '" He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better.',
-                                name: 'Perry Mason',
-                            },
-                            {
-                                // user-16.jpg
-                                size: '36',
-                                style: 'max-width:5.31%;top: 86%;left: 76%;',
-                                comment: 'For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts. I ought to just try that with my boss.',
-                                name: 'Briana Friedman',
-                            },
-                            {
-                                // user-17.jpg
-                                size: '44',
-                                style: 'max-width: 6.49%;top: 59%;left: 76%;',
-                                comment: 'I would get kicked out on the spot.But who knows, maybe that would be the best thing for me.',
-                                name: 'Manuel Kirk',
-                            },
-                            {
-                                // user-18.jpg
-                                size: '72',
-                                style: 'max-width: 10.62%;top: 14%;left: 78%;',
-                                comment: 'And it is a funny sort of business to be sitting up there at your desk, talking down at your subordinates from up there.',
-                                name: 'Cedric Reynolds',
-                            },
-                            {
-                                // user-19.jpg
-                                size: '64',
-                                style: 'max-width: 9.44%;top: 40%;left: 89%;',
-                                comment: 'I ought to just try that with my boss.',
-                                name: 'Gracelyn Wilcox',
-                            },
-                            {
-                                // user-20.jpg
-                                size: '24',
-                                style: 'max-width: 3.54%;top: 74%;left: 91%;',
-                                comment: 'It was half past six and the hands were quietly moving forwards, it was even later than half past.',
-                                name: 'Jamir Henson',
-                            },
+                                name: 'NextGen Startups',
+                                comment: 'Our collaboration with NMT Solutions was smooth. The team understood our needs and provided scalable solutions.',
+                                size: 74,
+                                style: 'top:60%; left:55%;'
+                            }
                         ]
                     }))
                 })
             </script>
+
+
             
-            <!-- Cta -->
+           <!-- Cta -->
             <section>
                 <div class="czd2q c92f3 cmhb9 c1plj">
 
@@ -668,17 +605,16 @@
 
                             <!-- CTA content -->
                             <div class="c346e c5ymx c9epb cescn crh83 cnxpd">
-                                <h3 class="cps50 crnbw cm36t">Free until you’re ready to launch</h3>
+                                <h3 class="cps50 crnbw cm36t">Get Ready-Made Projects Tailored For You</h3>
+                                <p class="text-gray-400 mt-2">From AI to Web Development — NMT Solutions delivers projects for students, startups, and businesses.</p>
                             </div>
 
                             <!-- CTA form -->
                             <form class="c9epb cs8sl">
                                 <div class="cw3my c04nn cd663 cks70 c3t8k c54sb cmhb9 cnc7y">
-                                    <input type="tel" class="c3mdo cltj3 cog1o cs8sl csrqa" placeholder="Phone number" aria-label="Phone number">
-                                    <a class="text-white bg-teal-500 cvy08 c2npy ctr9b" href="#0">Request code</a>
+                                    <input type="email" class="c3mdo cltj3 cog1o cs8sl csrqa" placeholder="Enter your email" aria-label="Email">
+                                    <a class="text-white bg-teal-500 cvy08 c2npy ctr9b" href="contact.html">Request Project Demo</a>
                                 </div>
-                                <!-- Success message -->
-                                <!-- <p class="text-center lg:text-left lg:absolute mt-2 opacity-75 text-sm">Thanks for subscribing!</p> -->
                             </form>
 
                         </div>
@@ -687,6 +623,7 @@
 
                 </div>
             </section>
+
 
         </main>
 
