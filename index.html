@@ -19,6 +19,11 @@
     </head>
 
     <body class="cwkwy cdmud cci6q c8d3u ca3pf cu0vm c6zr7">
+        <!-- <video autoplay muted loop playsinline id="bg-video">
+    <source src="videos/back-home.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video> -->
+     <canvas id="fluidCursor"></canvas>
         <!-- Page wrapper -->
         <div class="cr227 c27c3 c54sb cnc7y">
             <!-- Site header -->
@@ -50,6 +55,9 @@
                         <nav class="ci5ce cqxxm cfrwd">
                             <!-- Desktop menu links -->
                             <ul class="cxdxt cf4hw cxu0t cnc7y c2h4q">
+                                <li>
+                                    <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="projects.html">Projects</a>
+                                </li>
                                 <li>
                                     <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="about.html">About</a>
                                 </li>
@@ -234,14 +242,14 @@
                 </div>
 
                 <!-- Hero -->
-                <section>
+                <section class="hero-section">
                     <div class="czd2q c92f3 cmhb9 c1plj">
                         <div class="c1r3i c8lmj cew09 c09hn">
                             <!-- Hero content -->
                             <div class="ckv2s cxdxt co6hs c8zhu chdqp">
                                 <!-- Content -->
                                 <div class="cpo9b c2igy c7z56 c5ymx c4u1v cy5hl">
-                                    <h1 class="cps50 cbhe1 c21u3 cyb9k c41dw" data-aos="fade-down">NMT Solutions</h1>
+                                    <h1 class="" data-aos="fade-down">NMT Solutions</h1>
                                     <p class="text-gray-600 c0atf czz36" data-aos="fade-down" data-aos-delay="150">
                                         At NMT Solutions, we provide high-quality, ready-to-use projects across different technologies. Whether you are a college intern looking for practical learning or a business in need of tailored
                                         solutions, we have the right project for you.
@@ -368,7 +376,7 @@
                                                     >
                                                         <!-- Code will be typed here -->
                                                     </div>
-<span id="cursor" style="display:inline-block; width:2px; background:black; margin-left:2px;"></span>                                                    
+                                                    <span id="cursor" style="display: inline-block; width: 2px; background: black; margin-left: 2px;"></span>
                                                 </div>
 
                                                 <!-- Blinking cursor -->
@@ -401,85 +409,80 @@
                                         color: #ff7b72;
                                     }
                                 </style>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const codeLines = [
-        { text: "// NMT Solutions - Web App", color: "#6A9955" }, // comment - green
-        { text: "import React from 'react';", color: "#D4D4D4" }, // default - light gray
-        { text: "import { useState } from 'react';", color: "#D4D4D4" },
-        { text: "", color: "#D4D4D4" },
-        { text: "const App = () => {", color: "#569CD6" }, // keyword/const - blue
-        { text: "  const [projects, setProjects] = useState([]);", color: "#9CDCFE" }, // variable - light blue
-        { text: "  const [loading, setLoading] = useState(true);", color: "#9CDCFE" },
-        { text: "", color: "#D4D4D4" },
-        { text: "// Fetch available projects", color: "#6A9955" }, // comment - green
-        { text: "  const fetchProjects = async () => {", color: "#C586C0" }, // function - purple
-        { text: "    try {", color: "#569CD6" }, // keyword - blue
-        { text: "      const response = await fetch('/api/projects');", color: "#D4D4D4" }, // code - gray
-        { text: "      const data = await response.json();", color: "#D4D4D4" }, 
-        { text: "      setProjects(data);", color: "#9CDCFE" }, // variable - light blue
-        { text: "      setLoading(false);", color: "#9CDCFE" },
-        { text: "    } catch (error) {", color: "#569CD6" }, // keyword - blue
-        { text: "      console.error('Error:', error);", color: "#D16969" }, // error/log - red
-        { text: "    }", color: "#569CD6" }, 
-        { text: "  };", color: "#569CD6" },
-        { text: "};", color: "#569CD6" }
-    ];
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        const codeLines = [
+                                            { text: "// NMT Solutions - Web App", color: "#6A9955" }, // comment - green
+                                            { text: "import React from 'react';", color: "#D4D4D4" }, // default - light gray
+                                            { text: "import { useState } from 'react';", color: "#D4D4D4" },
+                                            { text: "", color: "#D4D4D4" },
+                                            { text: "const App = () => {", color: "#569CD6" }, // keyword/const - blue
+                                            { text: "  const [projects, setProjects] = useState([]);", color: "#9CDCFE" }, // variable - light blue
+                                            { text: "  const [loading, setLoading] = useState(true);", color: "#9CDCFE" },
+                                            { text: "", color: "#D4D4D4" },
+                                            { text: "// Fetch available projects", color: "#6A9955" }, // comment - green
+                                            { text: "  const fetchProjects = async () => {", color: "#C586C0" }, // function - purple
+                                            { text: "    try {", color: "#569CD6" }, // keyword - blue
+                                            { text: "      const response = await fetch('/api/projects');", color: "#D4D4D4" }, // code - gray
+                                            { text: "      const data = await response.json();", color: "#D4D4D4" },
+                                            { text: "      setProjects(data);", color: "#9CDCFE" }, // variable - light blue
+                                            { text: "      setLoading(false);", color: "#9CDCFE" },
+                                            { text: "    } catch (error) {", color: "#569CD6" }, // keyword - blue
+                                            { text: "      console.error('Error:', error);", color: "#D16969" }, // error/log - red
+                                            { text: "    }", color: "#569CD6" },
+                                            { text: "  };", color: "#569CD6" },
+                                            { text: "};", color: "#569CD6" },
+                                        ];
 
-    const typingElement = document.getElementById("typing-code");
-    const cursor = document.getElementById("cursor");
-    let currentLine = 0;
-    let currentChar = 0;
+                                        const typingElement = document.getElementById("typing-code");
+                                        const cursor = document.getElementById("cursor");
+                                        let currentLine = 0;
+                                        let currentChar = 0;
 
-    setInterval(() => {
-        cursor.style.visibility = cursor.style.visibility === "visible" ? "hidden" : "visible";
-    }, 500);
+                                        setInterval(() => {
+                                            cursor.style.visibility = cursor.style.visibility === "visible" ? "hidden" : "visible";
+                                        }, 500);
 
-    function escapeHTML(str) {
-        return str.replace(/&/g, "&amp;")
-                  .replace(/</g, "&lt;")
-                  .replace(/>/g, "&gt;");
-    }
+                                        function escapeHTML(str) {
+                                            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                                        }
 
-    function typeCode() {
-        if (currentLine < codeLines.length) {
-            const line = codeLines[currentLine].text;
-            const color = codeLines[currentLine].color || "#D4D4D4";
+                                        function typeCode() {
+                                            if (currentLine < codeLines.length) {
+                                                const line = codeLines[currentLine].text;
+                                                const color = codeLines[currentLine].color || "#D4D4D4";
 
-            if (currentChar <= line.length) {
-                const typedLines = codeLines.slice(0, currentLine)
-                    .map(l => `<span style="color:${l.color}">${escapeHTML(l.text)}</span>`);
-                const currentTyping = `<span style="color:${color}">${escapeHTML(line.substring(0, currentChar))}</span>`;
-                typingElement.innerHTML = typedLines.join("<br>") + (currentLine > 0 ? "<br>" : "") + currentTyping;
-                currentChar++;
-                setTimeout(typeCode, Math.random() * 50 + 20);
-            } else {
-                currentLine++;
-                currentChar = 0;
-                setTimeout(typeCode, 200);
-            }
-        } else {
-            setTimeout(() => {
-                typingElement.innerHTML = "";
-                currentLine = 0;
-                currentChar = 0;
-                typeCode();
-            }, 2000);
-        }
-    }
+                                                if (currentChar <= line.length) {
+                                                    const typedLines = codeLines.slice(0, currentLine).map((l) => `<span style="color:${l.color}">${escapeHTML(l.text)}</span>`);
+                                                    const currentTyping = `<span style="color:${color}">${escapeHTML(line.substring(0, currentChar))}</span>`;
+                                                    typingElement.innerHTML = typedLines.join("<br>") + (currentLine > 0 ? "<br>" : "") + currentTyping;
+                                                    currentChar++;
+                                                    setTimeout(typeCode, Math.random() * 50 + 20);
+                                                } else {
+                                                    currentLine++;
+                                                    currentChar = 0;
+                                                    setTimeout(typeCode, 200);
+                                                }
+                                            } else {
+                                                setTimeout(() => {
+                                                    typingElement.innerHTML = "";
+                                                    currentLine = 0;
+                                                    currentChar = 0;
+                                                    typeCode();
+                                                }, 2000);
+                                            }
+                                        }
 
-    typeCode();
-});
-</script>
-
-
+                                        typeCode();
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Stats -->
-                <section class="czjaw">
+                <section class="czjaw bg">
                     <!-- Background gradient (light version only) -->
                     <div class="cey85 clgvu chf91 cdy81 cgk3d c35ck chb9f c2s69 cp8ye c02j9 c4shy" aria-hidden="true"></div>
                     <!-- End background gradient (light version only) -->
@@ -528,7 +531,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <!-- Carousel built with Swiper.js [https://swiperjs.com/] -->
                         <!-- * Initialized in src/js/main.js -->
                         <!-- * Custom styles in src/css/additional-styles/theme.scss -->
-                        <div class="carousel swiper-container">
+                        <div class="carousel swiper-container bg">
                             <div class="swiper-wrapper">
                                 <!-- Carousel items -->
                                 <div class="swiper-slide c4xyx">
@@ -590,8 +593,8 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
 
                         <!-- Arrows -->
-                        <div class="czd2q c92f3 cmhb9 c1plj">
-                            <div class="ctiy6 cxdxt cb7l0 clfxw cnc7y">
+                        <div class="czd2q c92f3 cmhb9 c1plj bg">
+                            <div class="ctiy6 cxdxt cb7l0 clfxw cnc7y bg">
                                 <button class="carousel-prev bg-teal-500 ccnjx c5dfh cvy08 cj3dx cw3my cxdxt clq5w cbng2 ccb29 ceo83 cq8qi czjaw ccqhl cg6td cnc7y cvo8b cfank c8e3k">
                                     <span class="cft5d">Previous</span>
                                     <svg class="text-white cxzp0 ct7at c0atf c4u31 clq5w ccb29 ceo83 ckyke cca3l" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -626,7 +629,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             <!-- Section content -->
                             <div x-data="{ category: '1' }">
-                                <div class="cnenp cy220 crcpd c74as">
+                                <div class="cnenp cy220 crcpd c74as bg">
                                     <!-- Category buttons -->
                                     <div class="criy0 cw3my cgjws cyb33 cxu0t cc5g5 cmcbz c198j cnc7y">
                                         <button
@@ -899,7 +902,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             </svg>
 
                             <!-- Items -->
-                            <div class="c63cx csd7z cf6cx cn6x8 cmjh8 c2k38 cmhb9 crcpd c74as">
+                            <div class="c63cx csd7z cf6cx cn6x8 cmjh8 c2k38 cmhb9 crcpd c74as bg">
                                 <!-- 1st item -->
                                 <div class="cxdxt czjaw c54sb cnc7y">
                                     <!-- Line connecting (1) and (2) -->
@@ -967,7 +970,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>
 
                             <!-- Pricing tables -->
-                            <div class="clyfp cdxx5 crfqu c04nn cgv10 cn6x8 c3t8k cmhb9 cbv7r c74as">
+                            <div class="clyfp cdxx5 crfqu c04nn cgv10 cn6x8 c3t8k cmhb9 cbv7r c74as bg">
                                 <!-- Pricing table 1 -->
                                 <div class="c01sm co2a3 cj3dx c54sb cxgs4 c6zr7 c1zcx cszwl cnc7y cdt9h" data-aos="fade-down">
                                     <div class="cyb9k c2h4q cdo31">

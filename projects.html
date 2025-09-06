@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMT Solutions - Project Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="css/vendors/aos.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/vendors/swiper-bundle.min.css" />
+        <link href="style.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --background: #f8f9fa;
+            --teal: rgb(58, 186, 180); /* Teal color variable for buttons */
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .top-bar {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .callback-btn {
+            background: var(--teal); /* Updated to teal */
+            color: white;
+            border: none;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .callback-btn:hover {
+            background: #2a9c96; /* Darker teal */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.5s ease;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .logo-text:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-highlight {
+            color: var(--accent);
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-top: 0.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1450px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            gap: 2rem;
+        }
+        
+        .filters {
+            flex: 0 0 250px;
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            align-self: flex-start;
+            position: sticky;
+            top: 100px;
+            animation: fadeInLeft 0.5s ease;
+        }
+        
+        @keyframes fadeInLeft {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .filter-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+            color: var(--dark);
+        }
+        
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .filter-group h3 {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+        
+        .price-inputs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .price-inputs input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .price-inputs input:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+            outline: none;
+        }
+        
+        .language-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+        
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .language-option input {
+            cursor: pointer;
+        }
+        
+        .language-option label {
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+        
+        .language-option label:hover {
+            color: var(--secondary);
+        }
+        
+        .products {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 products per row */
+            gap: 1.5rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .product-image {
+            height: 180px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-details {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .description-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .read-more-btn {
+            background: transparent;
+            border: none;
+            color: var(--teal); /* Updated to teal */
+            cursor: pointer;
+            font-weight: 600;
+            padding: 0.2rem 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more-btn:hover {
+            color: #2a9c96; /* Darker teal */
+            transform: translateX(3px);
+        }
+        
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.2rem;
+            align-items: center;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 1.3rem;
+        }
+        
+        .product-language {
+            background: #eef7ff;
+            color: var(--secondary);
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .enquiry-btn {
+            background: var(--teal); /* Updated to teal */
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .enquiry-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .enquiry-btn:hover::before {
+            left: 100%;
+        }
+        
+        .enquiry-btn:hover {
+            background: #2a9c96; /* Darker teal */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.2rem;
+            color: #666;
+            animation: bounce 1s ease;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-section:hover h3::after {
+            width: 100px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .footer-links li {
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li:hover {
+            transform: translateX(5px);
+        }
+        
+        .footer-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 1200px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr); /* 2 products per row on medium screens */
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .filters {
+                width: 100%;
+                position: static;
+            }
+            
+            .products {
+                grid-template-columns: repeat(2, 1fr); /* 2 products per row on tablet */
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .top-bar-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+            
+            .contact-info {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .features {
+                flex-direction: column;
+            }
+            
+            .products {
+                grid-template-columns: 1fr; /* 1 product per row on mobile */
+            }
+            
+            .language-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="contact-info">
+                <a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (234) 567-890</a>
+                <a href="mailto:info@nmtsolutions.com"><i class="fas fa-envelope"></i> info@nmtsolutions.com</a>
+            </div>
+            <button class="callback-btn"><i class="fas fa-phone-alt"></i> Request Callback</button>
+        </div>
+    </div>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ready-to-Use Projects</h1>
+            <p>Find the perfect project for your academic needs or business requirements</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Wide range of technologies</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Perfect for college interns</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Customizable solutions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <aside class="filters">
+            <h2 class="filter-title">Filter Projects</h2>
+            
+            <div class="filter-group">
+                <h3>Price Range ($)</h3>
+                <div class="price-inputs">
+                    <input type="number" id="min-price" placeholder="Min" value="0" min="0">
+                    <input type="number" id="max-price" placeholder="Max" value="1000" min="0">
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <h3>Programming Language</h3>
+                <div class="language-options">
+                    <div class="language-option">
+                        <input type="checkbox" id="lang-all" value="All" checked>
+                        <label for="lang-all">All</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="checkbox" id="lang-c" value="C" class="lang-checkbox" checked>
+                        <label for="lang-c">C</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="checkbox" id="lang-cpp" value="C++" class="lang-checkbox" checked>
+                        <label for="lang-cpp">C++</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="checkbox" id="lang-java" value="Java" class="lang-checkbox" checked>
+                        <label for="lang-java">Java</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="checkbox" id="lang-php" value="PHP" class="lang-checkbox" checked>
+                        <label for="lang-php">PHP</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="checkbox" id="lang-dotnet" value=".NET" class="lang-checkbox" checked>
+                        <label for="lang-dotnet">.NET</label>
+                    </div>
+                    <div class="language-option">
+                        <input type="checkbox" id="lang-ns" value="NS" class="lang-checkbox" checked>
+                        <label for="lang-ns">NS</label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <main class="products" id="products-container">
+            <!-- Products will be dynamically inserted here -->
+        </main>
+    </div>
+    
+   <!-- Site footer -->
+            <footer class="czjaw">
+                <div class="czd2q c92f3 cmhb9 c1plj">
+                    <div class="cq8p6 cvde3 c5dtj cnqgv cxer1 cxbax">
+                        <!-- Footer illustration -->
+                        <div class="cey85 codcr" aria-hidden="true">
+                            <svg class="ck61j cimtg cgdju cgk3d c35ck cp8ye cpxo3" width="800" height="264" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="400" cy="400" r="400" fill="url(#footerglow_paint0_radial)" fill-opacity=".4"></circle>
+                                <defs>
+                                    <radialGradient id="footerglow_paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(90 0 400) scale(315.089)">
+                                        <stop stop-color="#3ABAB4"></stop>
+                                        <stop offset="1" stop-color="#3ABAB4" stop-opacity=".01"></stop>
+                                    </radialGradient>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <!-- Top area: Blocks -->
+                        <div class="ckv2s c8zhu cfsms cn59p cy5hl c74as">
+                            <!-- 1st block -->
+                            <div class="cnumf cdeew">
+                                <!-- Logo -->
+                                <a class="caun5" href="index-2.html" aria-label="Cruip">
+                                    <svg class="csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="flogo_a">
+                                                <stop stop-color="#3ABAB4" offset="0%"></stop>
+                                                <stop stop-color="#7F9CF5" offset="100%"></stop>
+                                            </linearGradient>
+                                            <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="flogo_b">
+                                                <stop stop-color="#3ABAB4" offset="0%"></stop>
+                                                <stop stop-color="#3ABAB4" stop-opacity="0" offset="100%"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M32 16h-8a8 8 0 10-16 0H0C0 7.163 7.163 0 16 0s16 7.163 16 16z" fill="url(#flogo_a)"></path>
+                                        <path d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16h8a8 8 0 1016 0h8z" fill="url(#flogo_b)"></path>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <!-- 2nd, 3rd, 4th and 5th blocks -->
+                            <div class="cmf5j cufz0 cf0hp cv9a4 cn59p c74as">
+                                <!-- 2nd block -->
+                                <div class="ceng1">
+                                    <h6 class="cf4hw cwaxc csrqa">Products</h6>
+                                    <ul>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Drag And Drop</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Visual Studio X</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Easy Content</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 3rd block -->
+                                <div class="ceng1">
+                                    <h6 class="cf4hw cwaxc csrqa">Resources</h6>
+                                    <ul>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Industries and tools</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Use cases</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Blog</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Online events</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Nostrud exercitation</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 4th block -->
+                                <div class="ceng1">
+                                    <h6 class="cf4hw cwaxc csrqa">Company</h6>
+                                    <ul>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Diversity &amp; inclusion</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">About us</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Press</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Customer stories</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Online communities</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 5th block -->
+                                <div class="ceng1">
+                                    <h6 class="cf4hw cwaxc csrqa">Support</h6>
+                                    <ul>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Documentation</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Tutorials &amp; guides</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Webinars</a>
+                                        </li>
+                                        <li class="ccipq">
+                                            <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Open-source</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom area -->
+                        <div class="cfofo cxv2k ci5ce">
+                            <!-- Social links -->
+                            <ul class="ch3bl c4u1v cz36d cyb9k cnc7y">
+                                <li>
+                                    <a class="text-white bg-teal-500 cvvk7 capfz cj3dx csz0f cw3my cxdxt cpz4m clq5w ccb29 ceo83 cnc7y" href="#0" aria-label="Twitter">
+                                        <svg class="c4u31 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="c3x8w">
+                                    <a class="text-white bg-teal-500 cvvk7 capfz cj3dx csz0f cw3my cxdxt cpz4m clq5w ccb29 ceo83 cnc7y" href="#0" aria-label="Github">
+                                        <svg class="c4u31 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="c3x8w">
+                                    <a class="text-white bg-teal-500 cvvk7 capfz cj3dx csz0f cw3my cxdxt cpz4m clq5w ccb29 ceo83 cnc7y" href="#0" aria-label="Facebook">
+                                        <svg class="c4u31 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.023 24L14 17h-3v-3h3v-2c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V14H21l-1 3h-2.72v7h-3.257z"></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="c3x8w">
+                                    <a class="text-white bg-teal-500 cvvk7 capfz cj3dx csz0f cw3my cxdxt cpz4m clq5w ccb29 ceo83 cnc7y" href="#0" aria-label="Instagram">
+                                        <svg class="c4u31 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="20.145" cy="11.892" r="1"></circle>
+                                            <path d="M16 20c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-6c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2z"></path>
+                                            <path
+                                                d="M20 24h-8c-2.056 0-4-1.944-4-4v-8c0-2.056 1.944-4 4-4h8c2.056 0 4 1.944 4 4v8c0 2.056-1.944 4-4 4zm-8-14c-.935 0-2 1.065-2 2v8c0 .953 1.047 2 2 2h8c.935 0 2-1.065 2-2v-8c0-.935-1.065-2-2-2h-8z"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="c3x8w">
+                                    <a class="text-white bg-teal-500 cvvk7 capfz cj3dx csz0f cw3my cxdxt cpz4m clq5w ccb29 ceo83 cnc7y" href="#0" aria-label="Linkedin">
+                                        <svg class="c4u31 csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M23.3 8H8.7c-.4 0-.7.3-.7.7v14.7c0 .3.3.6.7.6h14.7c.4 0 .7-.3.7-.7V8.7c-.1-.4-.4-.7-.8-.7zM12.7 21.6h-2.3V14h2.4v7.6h-.1zM11.6 13c-.8 0-1.4-.7-1.4-1.4 0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4-.1.7-.7 1.4-1.4 1.4zm10 8.6h-2.4v-3.7c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.8h-2.4V14h2.3v1c.3-.6 1.1-1.2 2.2-1.2 2.4 0 2.8 1.6 2.8 3.6v4.2h.1z"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <!-- Middle links -->
+                            <div class="c91hr ctzwv c4u1v ceng1 csrqa"><a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Terms</a> · <a class="text-gray-600 c0atf csz0f clq5w ccb29 ceo83" href="#0">Privacy Policy</a></div>
+
+                            <!-- Copyrights note -->
+                            <div class="text-gray-600 c0atf ceng1 c3kuf">© nmt-solutions.com. All rights reserved.</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <script src="js/vendors/alpinejs.min.js" defer=""></script>
+        <script src="js/vendors/aos.js"></script>
+        <script src="js/vendors/swiper-bundle.min.js"></script>
+        <script src="js/main.js"></script>
+
+
+    <script>
+        // Sample product data with images and longer descriptions
+        const products = [
+            {
+                id: 1,
+                title: "E-Commerce Website",
+                description: "A complete e-commerce solution with shopping cart and payment integration. This project includes user authentication, product catalog, shopping cart, checkout process, and order management. Built with modern web technologies, it features a responsive design that works on all devices. The admin panel allows for easy management of products, orders, and customers. Perfect for small to medium businesses looking to establish an online presence.",
+                price: 499,
+                language: "PHP",
+                image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 2,
+                title: "Inventory System",
+                description: "Desktop application for inventory management with reporting features. This system helps businesses track stock levels, orders, sales, and deliveries. It can also be used to create work orders, bills of materials, and other production-related documents. The application includes barcode scanning capability for easy product identification and tracking. Advanced reporting features provide insights into sales trends, inventory turnover, and product performance.",
+                price: 299,
+                language: "C++",
+                image: "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 3,
+                title: "Student Management",
+                description: "Web-based student information system with admin dashboard. This comprehensive system manages student records, attendance, grades, and scheduling. Teachers can input grades and attendance, while students can view their progress and schedules. Parents have access to their children's performance data. The admin dashboard provides analytics on student performance, attendance trends, and other key metrics. The system supports multiple user roles with appropriate permissions.",
+                price: 399,
+                language: "Java",
+                image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 4,
+                title: "Banking Application",
+                description: "Secure banking application with transaction processing. This application provides customers with 24/7 access to their accounts. Features include balance checking, fund transfers, bill payments, and transaction history. The system incorporates multi-layer security including encryption, two-factor authentication, and fraud detection algorithms. Administrative features allow bank staff to manage customer accounts, process requests, and generate financial reports.",
+                price: 599,
+                language: ".NET",
+                image: "https://images.unsplash.com/photo-1613243555988-441166d4d6fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 5,
+                title: "Social Media App",
+                description: "Mobile social media application with real-time updates. This app allows users to create profiles, share updates, photos, and videos, connect with friends, and join interest-based communities. Features include news feed, messaging, notifications, and live streaming. The application uses advanced algorithms to personalize content for each user. Built with cross-platform technology, it works seamlessly on both iOS and Android devices.",
+                price: 699,
+                language: "NS",
+                image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 6,
+                title: "Hotel Booking System",
+                description: "Online reservation system for hotels with availability checking. This system allows customers to search for available rooms based on dates, view room details and amenities, and make reservations. Hotel administrators can manage room inventory, pricing, and promotions. The system includes payment processing integration and sends automatic confirmation emails to customers. Reporting features help hotel managers analyze occupancy rates and revenue.",
+                price: 349,
+                language: "PHP",
+                image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 7,
+                title: "Game Development",
+                description: "2D game with physics engine and multiple levels. This game features colorful graphics, smooth animations, and engaging gameplay. The physics engine provides realistic movement and interactions between game objects. Players progress through multiple levels of increasing difficulty, with boss battles at the end of each world. The game includes character customization, power-ups, and online leaderboards. Built with a popular game engine, it can be deployed to multiple platforms.",
+                price: 549,
+                language: "C++",
+                image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 8,
+                title: "Weather App",
+                description: "Real-time weather forecasting application with maps. This app provides current weather conditions and forecasts for locations worldwide. Features include interactive weather maps, severe weather alerts, and detailed hourly and 10-day forecasts. Users can save multiple locations and receive notifications for changing weather conditions. The app uses data from reliable meteorological sources and presents it in an easy-to-understand interface. The design is clean and intuitive, with customizable widgets for quick access to weather information.",
+                price: 249,
+                language: "Java",
+                image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b25?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                id: 9,
+                title: "Fitness Tracker",
+                description: "Mobile application for tracking fitness activities and health metrics. This app allows users to log workouts, track steps, monitor heart rate, and set fitness goals. It includes features like GPS tracking for runs and rides, calorie counting, and integration with popular health platforms. The app provides personalized recommendations based on user activity and goals. With a sleek interface and comprehensive analytics, it helps users stay motivated and achieve their fitness objectives.",
+                price: 399,
+                language: "Java",
+                image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+
+        // Function to render products
+        function renderProducts(productsToRender) {
+            const productsContainer = document.getElementById('products-container');
+            productsContainer.innerHTML = '';
+            
+            if (productsToRender.length === 0) {
+                productsContainer.innerHTML = '<p class="no-results">No products match your filters. Try adjusting your criteria.</p>';
+                return;
+            }
+            
+            productsToRender.forEach((product, index) => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.style.animationDelay = `${index * 0.1}s`;
+                
+                // Create truncated description
+                const truncatedDesc = product.description.length > 120 
+                    ? product.description.substring(0, 120) + '...' 
+                    : product.description;
+                
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">${product.title}</h3>
+                        <div class="product-description">
+                            <div class="description-text">${truncatedDesc}</div>
+                            ${product.description.length > 120 ? 
+                                `<button class="read-more-btn">Read more <i class="fas fa-arrow-right"></i></button>
+                                 <div class="full-description" style="display: none;">${product.description}</div>` 
+                                : ''}
+                        </div>
+                        <div class="product-meta">
+                            <div class="product-price">$${product.price}</div>
+                            <div class="product-language">${product.language}</div>
+                        </div>
+                        <button class="enquiry-btn" data-id="${product.id}"><i class="fas fa-envelope"></i> Enquiry Now</button>
+                    </div>
+                `;
+                
+                productsContainer.appendChild(productCard);
+                
+                // Animate the card in
+                setTimeout(() => {
+                    productCard.classList.add('visible');
+                }, 10);
+            });
+            
+            // Add event listeners to enquiry buttons
+            document.querySelectorAll('.enquiry-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-id');
+                    const product = products.find(p => p.id == productId);
+                    
+                    // Add animation effect to button
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                        alert(`Enquiry about: ${product.title}\nPrice: $${product.price}\nWe'll contact you shortly!`);
+                    }, 200);
+                });
+            });
+            
+            // Add event listeners to read more buttons
+            document.querySelectorAll('.read-more-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const descriptionText = this.previousElementSibling;
+                    const fullDescription = this.nextElementSibling;
+                    
+                    if (fullDescription.style.display === 'none') {
+                        descriptionText.style.display = 'none';
+                        fullDescription.style.display = 'block';
+                        this.innerHTML = 'Read less <i class="fas fa-arrow-up"></i>';
+                    } else {
+                        descriptionText.style.display = '-webkit-box';
+                        fullDescription.style.display = 'none';
+                        this.innerHTML = 'Read more <i class="fas fa-arrow-right"></i>';
+                    }
+                });
+            });
+        }
+        
+        // Function to apply filters
+        function applyFilters() {
+            const minPrice = parseInt(document.getElementById('min-price').value) || 0;
+            const maxPrice = parseInt(document.getElementById('max-price').value) || Number.MAX_SAFE_INTEGER;
+            
+            const selectedLanguages = [];
+            const allChecked = document.getElementById('lang-all').checked;
+            
+            if (allChecked) {
+                // If "All" is checked, include all languages
+                document.querySelectorAll('.lang-checkbox').forEach(checkbox => {
+                    selectedLanguages.push(checkbox.value);
+                });
+            } else {
+                // Otherwise, only include the checked languages
+                document.querySelectorAll('.lang-checkbox:checked').forEach(checkbox => {
+                    selectedLanguages.push(checkbox.value);
+                });
+            }
+            
+            const filteredProducts = products.filter(product => {
+                return product.price >= minPrice && 
+                       product.price <= maxPrice && 
+                       selectedLanguages.includes(product.language);
+            });
+            
+            renderProducts(filteredProducts);
+        }
+        
+        // Function to handle "All" checkbox logic
+        function setupLanguageFilter() {
+            const allCheckbox = document.getElementById('lang-all');
+            const langCheckboxes = document.querySelectorAll('.lang-checkbox');
+            
+            // When "All" is checked/unchecked
+            allCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    // Check all language checkboxes
+                    langCheckboxes.forEach(checkbox => {
+                        checkbox.checked = true;
+                    });
+                }
+                applyFilters();
+            });
+            
+            // When individual language checkboxes change
+            langCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    // If any language checkbox is unchecked, uncheck "All"
+                    if (!this.checked) {
+                        allCheckbox.checked = false;
+                    }
+                    
+                    // If all language checkboxes are checked, check "All"
+                    const allChecked = Array.from(langCheckboxes).every(cb => cb.checked);
+                    allCheckbox.checked = allChecked;
+                    
+                    applyFilters();
+                });
+            });
+        }
+        
+        // Initial render
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts(products);
+            setupLanguageFilter();
+            
+            // Add event listeners to price inputs to apply filters on change
+            document.getElementById('min-price').addEventListener('input', applyFilters);
+            document.getElementById('max-price').addEventListener('input', applyFilters);
+            
+            // Callback button functionality
+            document.querySelector('.callback-btn').addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                    const name = prompt("Please enter your name:");
+                    const phone = prompt("Please enter your phone number:");
+                    
+                    if (name && phone) {
+                        alert(`Thank you ${name}! We will call you at ${phone} within 24 hours.`);
+                    }
+                }, 200);
+            });
+            
+            // Add animation to hero elements
+            setTimeout(() => {
+                document.querySelectorAll('.feature').forEach((feature, index) => {
+                    feature.style.animationDelay = `${0.6 + index * 0.2}s`;
+                    feature.classList.add('visible');
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
