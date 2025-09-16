@@ -17,8 +17,8 @@
         }
         
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
+            --primary: #161718;
+            --secondary: #0f1011;
             --accent: #e74c3c;
             --light: #ecf0f1;
             --dark: #2c3e50;
@@ -26,13 +26,15 @@
             --background: #f8f9fa;
             --teal: rgb(58, 186, 180); /* Teal color variable for buttons */
         }
+       
         
         body {
             background-color: var(--background);
             color: var(--text);
             line-height: 1.6;
+            background-color: #0f1011;
         }
-        
+      
         .top-bar {
             background-color: var(--primary);
             color: white;
@@ -40,12 +42,14 @@
             font-size: 0.9rem;
         }
         
-        .top-bar-content {
+       .top-bar-content {
             display: flex;
             justify-content: space-between;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
+            align-items: center;
+            gap: 1rem;
         }
         
         .contact-info {
@@ -86,16 +90,23 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-        
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            animation: slideDown 0.5s ease;
+          .theme-toggle-btn {
+            outline: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            margin-left: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
         }
+        .theme-toggle-btn:hover {
+            color: var(--secondary);
+        }
+       
+       
         
         @keyframes slideDown {
             from { transform: translateY(-20px); opacity: 0; }
@@ -109,14 +120,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 2rem;
         }
         
-        .logo {
+      .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.7rem;
         }
-        
+        .logo svg {
+            width: 36px;
+            height: 36px;
+        }
         .logo-text {
             font-size: 2rem;
             font-weight: 700;
@@ -132,6 +147,7 @@
             color: var(--accent);
         }
         
+        
         .tagline {
             font-size: 1rem;
             color: var(--dark);
@@ -140,13 +156,13 @@
         
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.2rem;
         }
-        
-        .nav-links a {
+       .nav-links a {
             color: var(--dark);
             text-decoration: none;
             font-weight: 500;
+            font-size: 1.06rem;
             transition: all 0.3s;
             position: relative;
         }
@@ -171,8 +187,8 @@
         }
         
         .hero {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
+       background-color: transparent;
+            color: rgb(226, 218, 218);
             padding: 3rem 0;
             text-align: center;
             position: relative;
@@ -197,6 +213,7 @@
             padding: 0 1rem;
             position: relative;
             z-index: 1;
+            background-color: transparent;
         }
         
         .hero h1 {
@@ -251,17 +268,18 @@
         .container {
             display: flex;
             max-width: 1450px;
-            margin: 2rem auto;
+             margin: 2rem auto; 
             padding: 0 1rem;
-            gap: 2rem;
+            gap: 2rem;;
+              background-color:transparent;
         }
         
         .filters {
             flex: 0 0 250px;
-            background: white;
+            background: rgba(249, 249, 250, 0.637);
             border-radius: 10px;
             padding: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 10px rgba(238, 226, 226, 0.08);
             align-self: flex-start;
             position: sticky;
             top: 100px;
@@ -278,7 +296,7 @@
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--secondary);
-            color: var(--dark);
+            color: var(--light);
         }
         
         .filter-group {
@@ -288,7 +306,7 @@
         .filter-group h3 {
             font-size: 1rem;
             margin-bottom: 0.8rem;
-            color: var(--dark);
+            color: var(--light);
         }
         
         .price-inputs {
@@ -345,7 +363,7 @@
         }
         
         .product-card {
-            background: white;
+            background: rgb(255, 255, 255);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -377,7 +395,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: rgb(39, 36, 36);
             font-size: 3rem;
             position: relative;
             overflow: hidden;
@@ -476,7 +494,7 @@
         
         .enquiry-btn {
             background: var(--teal); /* Updated to teal */
-            color: white;
+            color: rgb(29, 26, 26);
             border: none;
             padding: 0.8rem;
             border-radius: 4px;
@@ -598,7 +616,7 @@
             text-align: center;
             padding-top: 2rem;
             margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(248, 247, 247, 0.1);
         }
         
         @media (max-width: 1200px) {
@@ -660,11 +678,18 @@
             .footer-content {
                 grid-template-columns: 1fr;
             }
+            
         }
     </style>
 </head>
 <body>
-    <header class="cgk3d cs8sl clzfl">
+
+     <canvas id="fluidCursor"></canvas>
+    
+   <header class="cgk3d cs8sl clzfl">
+
+   
+
                 <div class="czd2q c92f3 cmhb9 c1plj">
                     <div class="ctiy6 cxdxt cnc7y cevvc">
                         <!-- Site branding -->
@@ -699,8 +724,40 @@
                                     <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="about.html">About</a>
                                 </li>
                                 <li>
+
+                                    <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="blog.html">Blog</a>
+                                </li>
+                                <li>
                                     <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="testimonials.html">Testimonials</a>
                                 </li>
+                                <!-- 1st level: hover -->
+                                <li class="czjaw" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                    <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="#0" aria-haspopup="true" :aria-expanded="open" @focus="open = true" @focusout="open = false" @click.prevent="">
+                                        Resources
+                                        <svg class="cx9o7 cn4vl c4u31 c2npy cqc4s c39kt cwc3u" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z"></path>
+                                        </svg>
+                                    </a>
+                                    <!-- 2nd level: hover -->
+                                    <ul
+                                        class="cj3dx cltap cvbap cgk3d cif5c c6zr7 ceg5n cp8ye c3x8w cvvwb ci4w1"
+                                        x-show="open"
+                                        x-transition:enter="ceo83 cqlpw cvsbb cgdju"
+                                        x-transition:enter-start="comu3 ch799"
+                                        x-transition:enter-end="cmyvu cjg5g"
+                                        x-transition:leave="ceo83 cqlpw cvsbb"
+                                        x-transition:leave-start="cmyvu"
+                                        x-transition:leave-end="comu3"
+                                        x-cloak=""
+                                    >
+                                        <li>
+                                            <a class="text-gray-600 cti8h cce98 c0atf c8qwg ceng1 cnc7y c1plj ci4w1" href="help.html" @focus="open = true" @focusout="open = false">Help center</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-gray-600 cti8h cce98 c0atf c8qwg ceng1 cnc7y c1plj ci4w1" href="404.html" @focus="open = true" @focusout="open = false">404</a>
+                                        </li>
+                                    </ul>
+                              
                             </ul>
 
                             <!-- Desktop lights switch -->
@@ -800,8 +857,24 @@
                                             <a class="text-gray-600 c35ee c9pff cf26p cnc7y ci4w1" href="about.html">About</a>
                                         </li>
                                         <li>
+
+                                            <a class="text-gray-600 c35ee c9pff cf26p cnc7y ci4w1" href="blog.html">Blog</a>
+                                        </li>
+                                        <li>
                                             <a class="text-gray-600 c35ee c9pff cf26p cnc7y ci4w1" href="testimonials.html">Testimonials</a>
                                         </li>
+                                        <li class="cq8p6 cvde3 covs2 cnqgv c6cql ci4w1">
+                                            <span class="text-gray-600 c0atf cnc7y ci4w1">Resources</span>
+                                            <ul class="ciz43">
+                                                <li>
+                                                    <a class="text-gray-600 c35ee c9pff c0atf cf4hw ceng1 cnc7y ci4w1" href="help.html">Help center</a>
+                                                </li>
+                                                <li>
+                                                    <a class="text-gray-600 c35ee c9pff c0atf cf4hw ceng1 cnc7y ci4w1" href="404.html">404</a>
+                                                </li>
+                                            </ul>
+                                       
+
                                         <li>
                                             <a class="text-white bg-teal-500 co2a3 cvy08 cw3my cxdxt clq5w czak8 cf4hw ccb29 ceo83 ceg5n cs8sl civob c6cql c1plj ci4w1" href="contact.html">Request Project</a>
                                         </li>
@@ -812,16 +885,10 @@
                     </div>
                 </div>
             </header>
-    <div class="top-bar">
-        <div class="top-bar-content">
-            <div class="contact-info">
-                <a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (234) 567-890</a>
-                <a href="mailto:info@nmtsolutions.com"><i class="fas fa-envelope"></i> info@nmtsolutions.com</a>
-            </div>
-            <button class="callback-btn"><i class="fas fa-phone-alt"></i> Request Callback</button>
-        </div>
-    </div>
-    
+
+
+  
+
     <section class="hero">
         <div class="hero-content">
             <h1>Ready-to-Use Projects</h1>
@@ -892,6 +959,7 @@
         
         <main class="products" id="products-container">
             <!-- Products will be dynamically inserted here -->
+             
         </main>
     </div>
     
@@ -995,6 +1063,7 @@
                                 </div>
                             </div>
                         </div>
+                               
 
                         <!-- Bottom area -->
                         <div class="cfofo cxv2k ci5ce">
@@ -1053,6 +1122,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </footer>
             <script src="js/vendors/alpinejs.min.js" defer=""></script>
         <script src="js/vendors/aos.js"></script>
@@ -1313,6 +1383,36 @@
                     feature.classList.add('visible');
                 });
             }, 100);
+        });
+    </script>
+    <script>
+        // Dark/light mode logic
+        function applyTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            localStorage.setItem('dark-mode', theme);
+            const icon = document.querySelector('#theme-toggle i');
+            if (theme === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup initial theme
+            let theme = localStorage.getItem('dark-mode') || 'light';
+            applyTheme(theme);
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                theme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(theme);
+            });
+
+            // --- (keep all your product filter/render and callback event code from before here) ---
+            // Example, adjust as needed:
+            // renderProducts(products);
+            // setupLanguageFilter();
+            // ...
         });
     </script>
 </body>
