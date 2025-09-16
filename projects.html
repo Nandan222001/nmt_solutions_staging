@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+      if (
+        localStorage.getItem("dark-mode") == "true" ||
+        !("dark-mode" in localStorage)
+      ) {
+        document.querySelector("html").classList.add("dark");
+      } else {
+        document.querySelector("html").classList.remove("dark");
+      }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NMT Solutions - Project Marketplace</title>
@@ -721,14 +731,19 @@
                                     <a  class="text-white c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="projects.html">Projects</a>
                                 </li>
                                 <li>
-                                    <a class="text-white c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="about.html">About</a>
+
+                                    <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="about.html">About</a>
                                 </li>
+                      
+                                    <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="testimonials.html">Testimonials</a>
+
+                                   
                                
                                 <!-- 1st level: hover -->
-                                <li>
-                                <a class="text-white c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="testimonials.html">Testimonials</a>
-                            </li>
-                              
+
+                                
+                                
+                             
                             </ul>
 
                             <!-- Desktop lights switch -->
@@ -888,7 +903,7 @@
             <h2 class="filter-title">Filter Projects</h2>
             
             <div class="filter-group">
-                <h3>Price Range ($)</h3>
+                <h3>Price Range (₹)</h3>
                 <div class="price-inputs">
                     <input type="number" id="min-price" placeholder="Min" value="0" min="0">
                     <input type="number" id="max-price" placeholder="Max" value="1000" min="0">
@@ -1110,7 +1125,7 @@
                 id: 1,
                 title: "E-Commerce Website",
                 description: "A complete e-commerce solution with shopping cart and payment integration. This project includes user authentication, product catalog, shopping cart, checkout process, and order management. Built with modern web technologies, it features a responsive design that works on all devices. The admin panel allows for easy management of products, orders, and customers. Perfect for small to medium businesses looking to establish an online presence.",
-                price: 499,
+                price: 4990,
                 language: "PHP",
                 image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
             },
@@ -1118,7 +1133,7 @@
                 id: 2,
                 title: "Inventory System",
                 description: "Desktop application for inventory management with reporting features. This system helps businesses track stock levels, orders, sales, and deliveries. It can also be used to create work orders, bills of materials, and other production-related documents. The application includes barcode scanning capability for easy product identification and tracking. Advanced reporting features provide insights into sales trends, inventory turnover, and product performance.",
-                price: 299,
+                price: 2990,
                 language: "C++",
                 image: "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
             },
@@ -1126,7 +1141,7 @@
                 id: 3,
                 title: "Student Management",
                 description: "Web-based student information system with admin dashboard. This comprehensive system manages student records, attendance, grades, and scheduling. Teachers can input grades and attendance, while students can view their progress and schedules. Parents have access to their children's performance data. The admin dashboard provides analytics on student performance, attendance trends, and other key metrics. The system supports multiple user roles with appropriate permissions.",
-                price: 399,
+                price: 3990,
                 language: "Java",
                 image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
             },
@@ -1134,7 +1149,7 @@
                 id: 4,
                 title: "Banking Application",
                 description: "Secure banking application with transaction processing. This application provides customers with 24/7 access to their accounts. Features include balance checking, fund transfers, bill payments, and transaction history. The system incorporates multi-layer security including encryption, two-factor authentication, and fraud detection algorithms. Administrative features allow bank staff to manage customer accounts, process requests, and generate financial reports.",
-                price: 599,
+                price: 5990,
                 language: ".NET",
                 image: "https://images.unsplash.com/photo-1613243555988-441166d4d6fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
             },
@@ -1142,7 +1157,7 @@
                 id: 5,
                 title: "Social Media App",
                 description: "Mobile social media application with real-time updates. This app allows users to create profiles, share updates, photos, and videos, connect with friends, and join interest-based communities. Features include news feed, messaging, notifications, and live streaming. The application uses advanced algorithms to personalize content for each user. Built with cross-platform technology, it works seamlessly on both iOS and Android devices.",
-                price: 699,
+                price: 6990,
                 language: "NS",
                 image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
             },
@@ -1150,7 +1165,7 @@
                 id: 6,
                 title: "Hotel Booking System",
                 description: "Online reservation system for hotels with availability checking. This system allows customers to search for available rooms based on dates, view room details and amenities, and make reservations. Hotel administrators can manage room inventory, pricing, and promotions. The system includes payment processing integration and sends automatic confirmation emails to customers. Reporting features help hotel managers analyze occupancy rates and revenue.",
-                price: 349,
+                price: 3490,
                 language: "PHP",
                 image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
             },
@@ -1158,7 +1173,7 @@
                 id: 7,
                 title: "Game Development",
                 description: "2D game with physics engine and multiple levels. This game features colorful graphics, smooth animations, and engaging gameplay. The physics engine provides realistic movement and interactions between game objects. Players progress through multiple levels of increasing difficulty, with boss battles at the end of each world. The game includes character customization, power-ups, and online leaderboards. Built with a popular game engine, it can be deployed to multiple platforms.",
-                price: 549,
+                price: 5490,
                 language: "C++",
                 image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
             },
@@ -1166,7 +1181,7 @@
                 id: 8,
                 title: "Weather App",
                 description: "Real-time weather forecasting application with maps. This app provides current weather conditions and forecasts for locations worldwide. Features include interactive weather maps, severe weather alerts, and detailed hourly and 10-day forecasts. Users can save multiple locations and receive notifications for changing weather conditions. The app uses data from reliable meteorological sources and presents it in an easy-to-understand interface. The design is clean and intuitive, with customizable widgets for quick access to weather information.",
-                price: 249,
+                price: 2490,
                 language: "Java",
                 image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b25?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
             },
@@ -1174,7 +1189,7 @@
                 id: 9,
                 title: "Fitness Tracker",
                 description: "Mobile application for tracking fitness activities and health metrics. This app allows users to log workouts, track steps, monitor heart rate, and set fitness goals. It includes features like GPS tracking for runs and rides, calorie counting, and integration with popular health platforms. The app provides personalized recommendations based on user activity and goals. With a sleek interface and comprehensive analytics, it helps users stay motivated and achieve their fitness objectives.",
-                price: 399,
+                price: 3990,
                 language: "Java",
                 image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
             }
@@ -1214,7 +1229,7 @@
                                 : ''}
                         </div>
                         <div class="product-meta">
-                            <div class="product-price">$${product.price}</div>
+                            <div class="product-price">₹${product.price}</div>
                             <div class="product-language">${product.language}</div>
                         </div>
                         <button class="enquiry-btn" data-id="${product.id}"><i class="fas fa-envelope"></i> Enquiry Now</button>
