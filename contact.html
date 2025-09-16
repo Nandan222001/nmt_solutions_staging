@@ -195,7 +195,7 @@
 
 
                         <!-- Contact form -->
-                        <form class="cubvf cmhb9">
+                        <form class="cubvf cmhb9" id="contactForm">
                             <div class="cxu0t cv9mf co18r cnc7y">
                                 <div class="cwhvr c4u1v cs8sl cyb9k c5mw1">
                                     <label class="block cf26p chdz1 cf4hw ceng1 ccipq" for="first-name">First Name <span class="cwie5">*</span></label>
@@ -264,7 +264,7 @@
                             </div>
                             <div class="cxu0t cv9mf c36nh cnc7y">
                                 <div class="cs8sl c5mw1">
-                                    <button class="text-white bg-teal-500 cvy08 cxdxt cs8sl cnc7y ctr9b">
+                                    <button type="submit" class="text-white bg-teal-500 cvy08 cxdxt cs8sl cnc7y ctr9b">
                                         <span>Request Project</span>
                                         <svg class="c2npy cjt7a cgal9 c39kt cwc3u" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                                             <path class="c4u31" d="M6.602 11l-.875-.864L9.33 6.534H0v-1.25h9.33L5.727 1.693l.875-.875 5.091 5.091z"></path>
@@ -273,7 +273,7 @@
                                 </div>
                             </div>
                         </form>
-
+<div id="response"></div>
 
                     </div>
                 </div>
@@ -450,7 +450,8 @@
     <script src="js/vendors/alpinejs.min.js" defer=""></script>
     <script src="js/vendors/aos.js"></script>
     <script src="js/main.js"></script>
-
+    <script src="./netlify/functions/sendMail.js"></script>
+     <canvas id="fluidCursor"></canvas>
 
 
 </body>
