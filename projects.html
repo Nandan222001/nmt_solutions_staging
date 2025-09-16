@@ -17,8 +17,8 @@
         }
         
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
+            --primary: #161718;
+            --secondary: #0f1011;
             --accent: #e74c3c;
             --light: #ecf0f1;
             --dark: #2c3e50;
@@ -26,13 +26,15 @@
             --background: #f8f9fa;
             --teal: rgb(58, 186, 180); /* Teal color variable for buttons */
         }
+       
         
         body {
             background-color: var(--background);
             color: var(--text);
             line-height: 1.6;
+            background-color: #0f1011;
         }
-        
+      
         .top-bar {
             background-color: var(--primary);
             color: white;
@@ -40,12 +42,14 @@
             font-size: 0.9rem;
         }
         
-        .top-bar-content {
+       .top-bar-content {
             display: flex;
             justify-content: space-between;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
+            align-items: center;
+            gap: 1rem;
         }
         
         .contact-info {
@@ -86,16 +90,23 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-        
-        header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            animation: slideDown 0.5s ease;
+          .theme-toggle-btn {
+            outline: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            margin-left: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
         }
+        .theme-toggle-btn:hover {
+            color: var(--secondary);
+        }
+       
+       
         
         @keyframes slideDown {
             from { transform: translateY(-20px); opacity: 0; }
@@ -109,14 +120,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 2rem;
         }
         
-        .logo {
+      .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.7rem;
         }
-        
+        .logo svg {
+            width: 36px;
+            height: 36px;
+        }
         .logo-text {
             font-size: 2rem;
             font-weight: 700;
@@ -132,6 +147,7 @@
             color: var(--accent);
         }
         
+        
         .tagline {
             font-size: 1rem;
             color: var(--dark);
@@ -140,13 +156,13 @@
         
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.2rem;
         }
-        
-        .nav-links a {
+       .nav-links a {
             color: var(--dark);
             text-decoration: none;
             font-weight: 500;
+            font-size: 1.06rem;
             transition: all 0.3s;
             position: relative;
         }
@@ -171,8 +187,8 @@
         }
         
         .hero {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
+       background-color: transparent;
+            color: rgb(226, 218, 218);
             padding: 3rem 0;
             text-align: center;
             position: relative;
@@ -197,6 +213,7 @@
             padding: 0 1rem;
             position: relative;
             z-index: 1;
+            background-color: transparent;
         }
         
         .hero h1 {
@@ -251,17 +268,18 @@
         .container {
             display: flex;
             max-width: 1450px;
-            margin: 2rem auto;
+             margin: 2rem auto; 
             padding: 0 1rem;
-            gap: 2rem;
+            gap: 2rem;;
+              background-color:transparent;
         }
         
         .filters {
             flex: 0 0 250px;
-            background: white;
+            background: rgba(249, 249, 250, 0.637);
             border-radius: 10px;
             padding: 1.5rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 10px rgba(238, 226, 226, 0.08);
             align-self: flex-start;
             position: sticky;
             top: 100px;
@@ -278,7 +296,7 @@
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--secondary);
-            color: var(--dark);
+            color: var(--light);
         }
         
         .filter-group {
@@ -288,7 +306,7 @@
         .filter-group h3 {
             font-size: 1rem;
             margin-bottom: 0.8rem;
-            color: var(--dark);
+            color: var(--light);
         }
         
         .price-inputs {
@@ -345,7 +363,7 @@
         }
         
         .product-card {
-            background: white;
+            background: rgb(255, 255, 255);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -377,7 +395,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: rgb(39, 36, 36);
             font-size: 3rem;
             position: relative;
             overflow: hidden;
@@ -476,7 +494,7 @@
         
         .enquiry-btn {
             background: var(--teal); /* Updated to teal */
-            color: white;
+            color: rgb(29, 26, 26);
             border: none;
             padding: 0.8rem;
             border-radius: 4px;
@@ -598,7 +616,7 @@
             text-align: center;
             padding-top: 2rem;
             margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(248, 247, 247, 0.1);
         }
         
         @media (max-width: 1200px) {
@@ -660,20 +678,206 @@
             .footer-content {
                 grid-template-columns: 1fr;
             }
+            
         }
     </style>
 </head>
 <body>
-    <div class="top-bar">
-        <div class="top-bar-content">
-            <div class="contact-info">
-                <a href="tel:+1234567890"><i class="fas fa-phone"></i> +1 (234) 567-890</a>
-                <a href="mailto:info@nmtsolutions.com"><i class="fas fa-envelope"></i> info@nmtsolutions.com</a>
-            </div>
-            <button class="callback-btn"><i class="fas fa-phone-alt"></i> Request Callback</button>
-        </div>
-    </div>
-    
+     <canvas id="fluidCursor"></canvas>
+     <div class="cr227 c27c3 c54sb cnc7y"  >
+   <header class="cgk3d cs8sl clzfl">
+                <div class="czd2q c92f3 cmhb9 c1plj">
+                    <div class="ctiy6 cxdxt cnc7y cevvc">
+                        <!-- Site branding -->
+                        <div class="c2npy cbbvf">
+                            <!-- Logo -->
+                            <a class="block" href="index.html" aria-label="Cruip">
+                                <svg class="csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="logo_a">
+                                            <stop stop-color="#3ABAB4" offset="0%"></stop>
+                                            <stop stop-color="#7F9CF5" offset="100%"></stop>
+                                        </linearGradient>
+                                        <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="logo_b">
+                                            <stop stop-color="#3ABAB4" offset="0%"></stop>
+                                            <stop stop-color="#3ABAB4" stop-opacity="0" offset="100%"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M32 16h-8a8 8 0 10-16 0H0C0 7.163 7.163 0 16 0s16 7.163 16 16z" fill="url(#logo_a)"></path>
+                                    <path d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16h8a8 8 0 1016 0h8z" fill="url(#logo_b)"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Desktop navigation -->
+                        <nav class="ci5ce cqxxm cfrwd">
+                            <!-- Desktop menu links -->
+                            <ul class="cxdxt cf4hw cxu0t cnc7y c2h4q">
+                                <li>
+                                    <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="projects.html">Projects</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="about.html">About</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="blog.html">Blog</a>
+                                </li>
+                                <li>
+                                    <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="testimonials.html">Testimonials</a>
+                                </li>
+                                <!-- 1st level: hover -->
+                                <li class="czjaw" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                    <a class="text-gray-600 c35ee c9pff cf26p cxdxt clq5w ccb29 ceo83 cnc7y cjrai ci4w1" href="#0" aria-haspopup="true" :aria-expanded="open" @focus="open = true" @focusout="open = false" @click.prevent="">
+                                        Resources
+                                        <svg class="cx9o7 cn4vl c4u31 c2npy cqc4s c39kt cwc3u" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z"></path>
+                                        </svg>
+                                    </a>
+                                    <!-- 2nd level: hover -->
+                                    <ul
+                                        class="cj3dx cltap cvbap cgk3d cif5c c6zr7 ceg5n cp8ye c3x8w cvvwb ci4w1"
+                                        x-show="open"
+                                        x-transition:enter="ceo83 cqlpw cvsbb cgdju"
+                                        x-transition:enter-start="comu3 ch799"
+                                        x-transition:enter-end="cmyvu cjg5g"
+                                        x-transition:leave="ceo83 cqlpw cvsbb"
+                                        x-transition:leave-start="cmyvu"
+                                        x-transition:leave-end="comu3"
+                                        x-cloak=""
+                                    >
+                                        <li>
+                                            <a class="text-gray-600 cti8h cce98 c0atf c8qwg ceng1 cnc7y c1plj ci4w1" href="help.html" @focus="open = true" @focusout="open = false">Help center</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-gray-600 cti8h cce98 c0atf c8qwg ceng1 cnc7y c1plj ci4w1" href="404.html" @focus="open = true" @focusout="open = false">404</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <!-- Desktop lights switch -->
+                            <div class="form-switch cw3my c54sb cahr4 cnc7y">
+                                <input type="checkbox" name="light-switch" id="light-switch-desktop" class="light-switch cft5d" />
+                                <label class="czjaw" for="light-switch-desktop">
+                                    <span class="cww77 c1cr6 clgvu chf91 c8mz9 czjaw chb9f ctlyr" aria-hidden="true"></span>
+                                    <svg class="cgk3d c2ysc" width="44" height="24" viewBox="0 0 44 24" xmlns="http://www.w3.org/2000/svg">
+                                        <g class="text-white c4u31" fill-rule="nonzero" opacity=".88">
+                                            <path
+                                                d="M32 8a.5.5 0 00.5-.5v-1a.5.5 0 10-1 0v1a.5.5 0 00.5.5zM35.182 9.318a.5.5 0 00.354-.147l.707-.707a.5.5 0 00-.707-.707l-.707.707a.5.5 0 00.353.854zM37.5 11.5h-1a.5.5 0 100 1h1a.5.5 0 100-1zM35.536 14.829a.5.5 0 00-.707.707l.707.707a.5.5 0 00.707-.707l-.707-.707zM32 16a.5.5 0 00-.5.5v1a.5.5 0 101 0v-1a.5.5 0 00-.5-.5zM28.464 14.829l-.707.707a.5.5 0 00.707.707l.707-.707a.5.5 0 00-.707-.707zM28 12a.5.5 0 00-.5-.5h-1a.5.5 0 100 1h1a.5.5 0 00.5-.5zM28.464 9.171a.5.5 0 00.707-.707l-.707-.707a.5.5 0 00-.707.707l.707.707z"
+                                            ></path>
+                                            <circle cx="32" cy="12" r="3"></circle>
+                                            <circle fill-opacity=".4" cx="12" cy="12" r="6"></circle>
+                                            <circle fill-opacity=".88" cx="12" cy="12" r="3"></circle>
+                                        </g>
+                                    </svg>
+                                    <span class="cft5d">Switch to light / dark version</span>
+                                </label>
+                            </div>
+
+                            <!-- Desktop CTA on the right -->
+                            <ul class="cxdxt c138q cxu0t cnc7y">
+                                <li>
+                                    <a class="text-white bg-teal-500 cvy08 c9xc1 cbev1" href="contact.html">Request Project</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <!-- Mobile menu -->
+                        <div class="czak8 ce20z" x-data="{ expanded: false }">
+                            <!-- Mobile lights switch -->
+                            <div class="form-switch cw3my c54sb ccond cnc7y">
+                                <input type="checkbox" name="light-switch" id="light-switch-mobile" class="light-switch cft5d" />
+                                <label class="czjaw" for="light-switch-mobile">
+                                    <span class="cww77 c1cr6 clgvu chf91 c8mz9 czjaw chb9f ctlyr" aria-hidden="true"></span>
+                                    <svg class="cgk3d c2ysc" width="44" height="24" viewBox="0 0 44 24" xmlns="http://www.w3.org/2000/svg">
+                                        <g class="text-white c4u31" fill-rule="nonzero" opacity=".88">
+                                            <path
+                                                d="M32 8a.5.5 0 00.5-.5v-1a.5.5 0 10-1 0v1a.5.5 0 00.5.5zM35.182 9.318a.5.5 0 00.354-.147l.707-.707a.5.5 0 00-.707-.707l-.707.707a.5.5 0 00.353.854zM37.5 11.5h-1a.5.5 0 100 1h1a.5.5 0 100-1zM35.536 14.829a.5.5 0 00-.707.707l.707.707a.5.5 0 00.707-.707l-.707-.707zM32 16a.5.5 0 00-.5.5v1a.5.5 0 101 0v-1a.5.5 0 00-.5-.5zM28.464 14.829l-.707.707a.5.5 0 00.707.707l.707-.707a.5.5 0 00-.707-.707zM28 12a.5.5 0 00-.5-.5h-1a.5.5 0 100 1h1a.5.5 0 00.5-.5zM28.464 9.171a.5.5 0 00.707-.707l-.707-.707a.5.5 0 00-.707.707l.707.707z"
+                                            ></path>
+                                            <circle cx="32" cy="12" r="3"></circle>
+                                            <circle fill-opacity=".4" cx="12" cy="12" r="6"></circle>
+                                            <circle fill-opacity=".88" cx="12" cy="12" r="3"></circle>
+                                        </g>
+                                    </svg>
+                                    <span class="cft5d">Switch to light / dark version</span>
+                                </label>
+                            </div>
+
+                            <!-- Hamburger button -->
+                            <button class="ce3b3" :class="{ 'active': expanded }" @click.stop="expanded = !expanded" aria-controls="mobile-nav" :aria-expanded="expanded">
+                                <span class="cft5d">Menu</span>
+                                <svg class="c35ee c9pff cf26p c8d3u c4u31 clq5w ccb29 ceo83 cr68y cj7c4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="4" width="24" height="2" rx="1"></rect>
+                                    <rect y="11" width="24" height="2" rx="1"></rect>
+                                    <rect y="18" width="24" height="2" rx="1"></rect>
+                                </svg>
+                            </button>
+
+                            <!-- Mobile navigation -->
+                            <nav
+                                id="mobile-nav"
+                                class="cdmud ceikc cxcxv cvbap cxslo c2k38 c6zr7 cp8ye cy740 cs8sl cvtns cti3h cg6td"
+                                @click.outside="expanded = false"
+                                @keydown.escape.window="expanded = false"
+                                x-show="expanded"
+                                x-transition:enter="ceo83 cqlpw cvsbb cgdju"
+                                x-transition:enter-start="comu3 cxcb4"
+                                x-transition:enter-end="cmyvu cw8k7"
+                                x-transition:leave="ceo83 cqlpw cvsbb"
+                                x-transition:leave-start="cmyvu"
+                                x-transition:leave-end="comu3"
+                                x-cloak=""
+                            >
+                                <div class="c1t6c cb7tb chur8">
+                                    <!-- Logo -->
+                                    <a class="caun5 cyb9k" href="index.html" aria-label="Cruip">
+                                        <svg class="csz25 cchtt" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="menulogo_a">
+                                                    <stop stop-color="#3ABAB4" offset="0%"></stop>
+                                                    <stop stop-color="#7F9CF5" offset="100%"></stop>
+                                                </linearGradient>
+                                                <linearGradient x1="26%" y1="100%" x2="100%" y2="100%" id="menulogo_b">
+                                                    <stop stop-color="#3ABAB4" offset="0%"></stop>
+                                                    <stop stop-color="#3ABAB4" stop-opacity="0" offset="100%"></stop>
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M32 16h-8a8 8 0 10-16 0H0C0 7.163 7.163 0 16 0s16 7.163 16 16z" fill="url(#menulogo_a)"></path>
+                                            <path d="M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16h8a8 8 0 1016 0h8z" fill="url(#menulogo_b)"></path>
+                                        </svg>
+                                    </a>
+                                    <!-- Links -->
+                                    <ul>
+                                        <li>
+                                            <a class="text-gray-600 c35ee c9pff cf26p cnc7y ci4w1" href="about.html">About</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-gray-600 c35ee c9pff cf26p cnc7y ci4w1" href="blog.html">Blog</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-gray-600 c35ee c9pff cf26p cnc7y ci4w1" href="testimonials.html">Testimonials</a>
+                                        </li>
+                                        <li class="cq8p6 cvde3 covs2 cnqgv c6cql ci4w1">
+                                            <span class="text-gray-600 c0atf cnc7y ci4w1">Resources</span>
+                                            <ul class="ciz43">
+                                                <li>
+                                                    <a class="text-gray-600 c35ee c9pff c0atf cf4hw ceng1 cnc7y ci4w1" href="help.html">Help center</a>
+                                                </li>
+                                                <li>
+                                                    <a class="text-gray-600 c35ee c9pff c0atf cf4hw ceng1 cnc7y ci4w1" href="404.html">404</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="text-white bg-teal-500 co2a3 cvy08 cw3my cxdxt clq5w czak8 cf4hw ccb29 ceo83 ceg5n cs8sl civob c6cql c1plj ci4w1" href="contact.html">Request Project</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
     <section class="hero">
         <div class="hero-content">
             <h1>Ready-to-Use Projects</h1>
@@ -744,6 +948,7 @@
         
         <main class="products" id="products-container">
             <!-- Products will be dynamically inserted here -->
+             
         </main>
     </div>
     
@@ -869,6 +1074,7 @@
                                 </div>
                             </div>
                         </div>
+                               
 
                         <!-- Bottom area -->
                         <div class="cfofo cxv2k ci5ce">
@@ -927,6 +1133,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </footer>
             <script src="js/vendors/alpinejs.min.js" defer=""></script>
         <script src="js/vendors/aos.js"></script>
@@ -1187,6 +1394,36 @@
                     feature.classList.add('visible');
                 });
             }, 100);
+        });
+    </script>
+    <script>
+        // Dark/light mode logic
+        function applyTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            localStorage.setItem('dark-mode', theme);
+            const icon = document.querySelector('#theme-toggle i');
+            if (theme === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setup initial theme
+            let theme = localStorage.getItem('dark-mode') || 'light';
+            applyTheme(theme);
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                theme = document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(theme);
+            });
+
+            // --- (keep all your product filter/render and callback event code from before here) ---
+            // Example, adjust as needed:
+            // renderProducts(products);
+            // setupLanguageFilter();
+            // ...
         });
     </script>
 </body>
